@@ -14,7 +14,7 @@ import {Router} from '@angular/router';
 export class GuardiansComponent implements OnInit, AfterViewInit {
   GuardianData: Guardian;
   dataSource = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'username', 'first name', 'last name', 'email', 'address', 'gender', 'actions'];
+  displayedColumns: string[] = ['id', 'username', 'firstName', 'lastName', 'email', 'address', 'gender', 'actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   constructor(private httpDataService: HttpDataService, private router: Router) {
@@ -24,7 +24,6 @@ export class GuardiansComponent implements OnInit, AfterViewInit {
   ngOnInit(): void {
     this.dataSource.sort = this.sort;
     this.getAllGuardians();
-    console.log(this.dataSource);
   }
   ngAfterViewInit(): void{
     this.dataSource.paginator = this.paginator;
@@ -39,6 +38,12 @@ export class GuardiansComponent implements OnInit, AfterViewInit {
   getAllGuardians(): void{
     this.httpDataService.getAllGuardians().subscribe((response: any) => {
       this.dataSource = response;
+    });
+  }
+
+  setCurrentGuardian(id): void{
+    this.httpDataService.getGuardian(id).subscribe((response: any) => {
+      window.localStorage.setItem(id, response);
     });
   }
 
