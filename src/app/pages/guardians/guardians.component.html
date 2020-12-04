@@ -1,1 +1,45 @@
-<p>guardians works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Guardians</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+      <ng-container matColumnDef="id">
+        <th mat-header-cell *matHeaderCellDef> #Id </th>
+        <th mat-cell *matCellDef="let element"> {{ element.id}}</th>
+      </ng-container>
+      <ng-container matColumnDef="username">
+        <th mat-header-cell *matHeaderCellDef> UserName </th>
+        <th mat-cell *matCellDef="let element"> {{ element.username}}</th>
+      </ng-container>
+      <ng-container matColumnDef="first name">
+        <th mat-header-cell *matHeaderCellDef> FirstName </th>
+        <th mat-cell *matCellDef="let element"> {{ element.firstName }} </th>
+      </ng-container>
+      <ng-container matColumnDef="last name">
+        <th mat-header-cell *matHeaderCellDef> LastName </th>
+        <th mat-cell *matCellDef="let element"> {{ element.lastName }} </th>
+      </ng-container>
+      <ng-container matColumnDef="email">
+        <th mat-header-cell *matHeaderCellDef> Email </th>
+        <th mat-cell *matCellDef="let element"> {{ element.email }} </th>
+      </ng-container>
+      <ng-container matColumnDef="address">
+        <th mat-header-cell *matHeaderCellDef> Address </th>
+        <th mat-cell *matCellDef="let element"> {{element.address }} </th>
+      </ng-container>
+      <ng-container matColumnDef="gender">
+        <th mat-header-cell *matHeaderCellDef> Gender </th>
+        <th mat-cell *matCellDef="let element"> {{element.gender }} </th>
+      </ng-container>
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef> Actions </th>
+        <a href="javascript:void(0)"><mat-icon inline aria-hidden="false" aria-label="Edit" style="padding-right: 10px;">prueba</mat-icon></a>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"
+          [ngClass]="{'editable-row': GuardianData.id === row.id}"></tr>
+    </table>
+    <mat-paginator [pageSize]="5" [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons></mat-paginator>
+  </mat-card-content>
+</mat-card>
