@@ -7,8 +7,8 @@ import {UrgencyComponent} from './pages/urgency/urgency.component';
 const routes: Routes = [
   {path: '', component: GuardiansComponent},
   {path: 'urgencies', component: UrgenciesComponent},
-  {path: 'guardian/:guardianId/urgencies?new', component: UrgencyComponent},
-  {path: 'guardian/:guardianId/urgencies/:id', component: UrgencyComponent}
+  {path: 'guardians/:guardianId/urgencies?new', component: UrgencyComponent},
+  {path: 'guardians/:guardianId/urgencies/:id', component: UrgencyComponent}
 ];
 
 @NgModule({

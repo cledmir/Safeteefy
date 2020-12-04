@@ -5,6 +5,7 @@ import {MatPaginator} from '@angular/material/paginator';
 import {MatSort} from '@angular/material/sort';
 import {HttpDataService} from '../../services/http-data.service';
 import {Router} from '@angular/router';
+import {AppComponent} from '../../app.component';
 
 @Component({
   selector: 'app-guardians',
@@ -43,7 +44,9 @@ export class GuardiansComponent implements OnInit, AfterViewInit {
 
   setCurrentGuardian(id): void{
     this.httpDataService.getGuardian(id).subscribe((response: any) => {
-      window.localStorage.setItem(id, response);
+      window.sessionStorage.setItem('id', id);
+      window.sessionStorage.setItem('guardian', response.username);
+      this.router.navigate(['']).then(() => null);
     });
   }
 

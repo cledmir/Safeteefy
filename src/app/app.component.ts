@@ -7,4 +7,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Safeteefy';
+  UpdateName(): string {
+    return sessionStorage.getItem('guardian');
+  }
 }
