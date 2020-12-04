@@ -1,0 +1,6 @@
+{
+  "/api/*" : "/$1",
+  "/guardians/:id/urgencies" : "/guardians/:id?_embed=urgencies",
+  "/guardians/:guardianId/urgencies/:id" : "/urgencies/:id",
+  "/guardians/:guardianId/urgencies?new" : "/urgencies"
+}

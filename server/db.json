@@ -1,0 +1,60 @@
+{
+  "guardians": [
+    {
+      "id": 1,
+      "username": "waaaa",
+      "email": "email@gmail.com",
+      "firstName": "pedro",
+      "lastName": "aea",
+      "gender": "cabro",
+      "address": "la mierda"
+    },
+    {
+      "id": 2,
+      "username": "wason",
+      "email": "email2@gmail.com",
+      "firstName": "pablo",
+      "lastName": "escobar",
+      "gender": "maricomamawebaso",
+      "address": "colombia"
+    }
+  ],
+  "urgencies": [
+    {
+      "id": 1,
+      "title": "aiuda",
+      "summary": "me cai",
+      "latitude": 20.3,
+      "longitude": 13.5,
+      "reportedAt": "2020-05-02",
+      "guardianId": 1
+    },
+    {
+      "id": 2,
+      "title": "aiudsdsdda",
+      "summary": "cledmir",
+      "latitude": 20.34,
+      "longitude": 15.5,
+      "reportedAt": "2020-05-02",
+      "guardianId": 2
+    },
+    {
+      "id": 4,
+      "title": "sfsefes",
+      "summary": "sefdfwa",
+      "latitude": "50",
+      "longitude": "50",
+      "reportedAt": "sefefef",
+      "guardianId": 1
+    },
+    {
+      "id": 5,
+      "title": "esfsef",
+      "summary": "sefsef",
+      "latitude": "5",
+      "longitude": "5",
+      "reportedAt": "awdadwad",
+      "guardianId": 1
+    }
+  ]
+}
