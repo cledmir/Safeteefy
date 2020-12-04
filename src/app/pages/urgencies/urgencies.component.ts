@@ -18,7 +18,7 @@ export class UrgenciesComponent implements OnInit, AfterViewInit {
   urgencyForm: NgForm;
   urgencyData: Urgency;
   dataSource = new MatTableDataSource();
-  displayedColumns: string[] = ['id', 'title', 'summary', 'latitude', 'longitude', 'reportedAt'];
+  displayedColumns: string[] = ['id', 'title', 'summary', 'latitude', 'longitude', 'reportedAt', 'actions'];
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort) sort: MatSort;
   isEditMode = false;
@@ -29,7 +29,7 @@ export class UrgenciesComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.guardianId = +(window.localStorage.getItem('id'));
+    this.guardianId = +(window.sessionStorage.getItem('id'));
     this.dataSource.sort = this.sort;
     this.getAllUrgencies(this.guardianId);
   }
@@ -46,7 +46,7 @@ export class UrgenciesComponent implements OnInit, AfterViewInit {
   }
   getAllUrgencies(guardianId): void {
     this.httpDataService.getAllUrgenciesByGuardian(guardianId).subscribe((response: any) => {
-      this.dataSource.data = response;
+      this.dataSource.data = response.urgencies;
     });
   }
   editItem(element): void {
@@ -96,12 +96,6 @@ export class UrgenciesComponent implements OnInit, AfterViewInit {
     } else {
       console.log('Invalid Data');
     }
-  }
-  navigateToAddUrgency(): void {
-    this.router.navigate([`guardians/${this.guardianId}/urgencies?new`]).then(() => null);
-  }
-  navigateToEditUrgency(urgencyId): void {
-    this.router.navigate([`guardians/${this.guardianId}/urgencies/${urgencyId}`]).then(() => null);
   }
 }
 

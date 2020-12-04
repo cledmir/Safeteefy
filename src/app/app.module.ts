@@ -17,14 +17,12 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { HttpClientModule } from '@angular/common/http';
 import { UrgenciesComponent } from './pages/urgencies/urgencies.component';
 import { GuardiansComponent } from './pages/guardians/guardians.component';
-import { UrgencyComponent } from './pages/urgency/urgency.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UrgenciesComponent,
-    GuardiansComponent,
-    UrgencyComponent
+    GuardiansComponent
   ],
   imports: [
     BrowserModule,

@@ -55,6 +55,24 @@
       "longitude": "5",
       "reportedAt": "awdadwad",
       "guardianId": 1
+    },
+    {
+      "title": "informe trabajo final",
+      "summary": "testtttttt",
+      "latitude": 10,
+      "longitude": 7,
+      "reportedAt": "2020-12-24",
+      "guardianId": 2,
+      "id": 6
+    },
+    {
+      "title": "hola",
+      "summary": "testtttttt",
+      "latitude": 5,
+      "longitude": 6,
+      "reportedAt": "2020-12-17",
+      "guardianId": 1,
+      "id": 7
     }
   ]
 }
