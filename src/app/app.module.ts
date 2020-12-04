@@ -10,15 +10,13 @@ import { UrgencyComponent } from './pages/urgency/urgency.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { HomeComponent } from './pages/home/home.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     UrgenciesComponent,
     GuardiansComponent,
-    UrgencyComponent,
-    HomeComponent
+    UrgencyComponent
   ],
   imports: [
     BrowserModule,
